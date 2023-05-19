@@ -1,0 +1,33 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movies Data</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main1.css')}}">
+</head>
+<body>
+  <h1>Choose in the fallowing options</h1>
+    <form method="post">
+        <label>
+          <input class="rad"
+          type="radio" name="choice" value="1"><h1> Add a movie</h1>
+        </label>
+        <br>
+        <label>
+          <input class="rad"
+          type="radio" name="choice" value="2"><h1> Display movies</h1>
+        </label>
+        <br>
+        <label>
+          <input class="rad"
+          type="radio" name="choice" value="3"><h1> Quit </h1>
+        </label>  
+        <br>
+        <input type="submit" value="Submit">
+    </form> 
+
+
+</body>
+</html>

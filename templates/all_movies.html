@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Movies</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+</head>
+<body>
+    <h1>All Movies</h1>
+
+    {% if moviesList %}
+    <ul style="font-size: 1.3em; align-items: center;">
+    {% for movie in moviesList %}
+    <li>The Movie: {{ movie[0] }} fits under the genre of {{ movie[1] }} and it has a 
+        {{ movie[2] }} ratings</li>
+    {% endfor %}
+    </ul>
+    {% else %}
+    <p style="font-size: 1.3em">No movie found.</p>
+    {% endif %}
+    
+
+    <a href="/" style="font-size: 1.3em">Back to Movies Manager</a>
+</body>
+</html>

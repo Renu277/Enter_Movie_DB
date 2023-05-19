@@ -1,0 +1,24 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movies Manager</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+</head>
+<body>
+    <form action="{{ url_for('add_movie') }}" method="post">
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name"><br>
+
+      <label for="genre">Genre:</label><br>
+      <input type="text" id="genre" name="genre"><br>
+
+      <label for="ratings">Number of Ratings:</label><br>
+      <input type="number" id="ratings" name="ratings"><br>
+
+      <input type="submit" value="submit">
+    </form> 
+
+</body>
+</html>
