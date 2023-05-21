@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
-
+import sqlite3
 app = Flask(__name__)
 
 moviesList = []
@@ -24,6 +24,14 @@ def add_movie():
         nGenre = request.form['genre']
         nRating = request.form['ratings']
         moviesList.append([nName, nGenre, nRating])
+        ###############
+        db = sqlite3.connect('moviesdata.db')#mdata = moviedata
+        cur = db.cursor()
+        cur.execute("INSERT INTO newmovies (Title, Genre, Rating) VALUES (?, ?, ?)",
+                    (nName, nGenre, nRating))
+        db.commit()
+        db.close()
+        #moviesList.append([nName, nGenre, nRating])
         return redirect(url_for('movies_manager'))
     return render_template('add_movie.html')
 @app.route('/all_movies')
