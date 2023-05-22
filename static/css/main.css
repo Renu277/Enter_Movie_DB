@@ -17,37 +17,26 @@ input {
     margin: 20px;
     border: none;
     border-radius: 10px;
-    font-family: Shanti;
+    font-family: Arial grey;
     text-align: center;
     font-size: 1.3em;
 
 }
 label{
-    font-family: Shanti;
+    font-family: Arial grey;
     text-align: center;
     font-size: 1.3em; 
 }
 ul{
-    font-family: Shanti;
+    font-family: Arial grey;
     text-align: center;
     font-size: 1.3em;   
 }
 ul li {    
-    font-family: Shanti;
+    font-family: Arial grey;
     text-align: center;
     font-size: 1.3em;}
 
-
-#greet {
-    background-color: palevioletred;
-    color: white;
-    width: 200px;
-}
-
-#greet:hover {
-    background-color: mediumvioletred;
-    cursor: pointer;
-}
 
 input:focus {
     border: solid 5px #00FFCE;

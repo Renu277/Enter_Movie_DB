@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 import sqlite3
 app = Flask(__name__)
-
+#latest movies data https://www.the-numbers.com/market/2023/top-grossing-movies
 moviesList = []
 
 @app.route('/', methods=['GET', 'POST'])
@@ -13,7 +13,7 @@ def movies_manager():
         elif choice == '2':           
            return redirect(url_for('all_movies'))
         elif choice == '3':           
-           return print('-----')
+           redirect(url_for('quit_app'))
     return render_template('index.html', moviesList=moviesList)
 
 
@@ -31,12 +31,16 @@ def add_movie():
                     (nName, nGenre, nRating))
         db.commit()
         db.close()
-        #moviesList.append([nName, nGenre, nRating])
         return redirect(url_for('movies_manager'))
     return render_template('add_movie.html')
+
 @app.route('/all_movies')
 def all_movies():
     return render_template('all_movies.html', moviesList=moviesList)
+
+@app.route('/quit')
+def quit_app():
+    return 'Quitting...'
 
 if __name__ == '__main__':
     app.run(debug=True)
